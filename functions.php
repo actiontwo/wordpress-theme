@@ -1,13 +1,20 @@
 <?php
 
-require_once 'include/url_define.php';
-require_once 'include/enqueue_scripts.php';
-require_once 'include/post_thumbnail.php';
-require_once 'include/menu.php';
-require_once 'include/walker_nav_menu.php';
-require_once 'include/shortcode.php';
-include_once 'include/theme_options.php';
+$includes = array(
+  'include/url_define.php',
+  'include/enqueue_scripts.php',
+  'include/post_thumbnail.php',
+  'include/menu.php',
+  'include/walker_nav_menu.php',
+  'include/shortcode.php',
+  'include/theme_options.php',
+  
+  'post_type/example.php',
+  
+  'widget/example.php'
+);
 
+foreach ($includes as $include) {
+  require_once($include);
+}
 
-require_once('post-type/example.php');
-require_once('widget/example.php');
